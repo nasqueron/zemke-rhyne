@@ -56,10 +56,10 @@ class GetPublicKeys {
 	/**
 	 * Gets a .ssh/authorized_keys line to give access to the specified server
 	 *
-	 * @param object The server to give access to
-	 * @return string 
+	 * @param object $server The server to give access to
+	 * @return string The line to add in authorized_keys file to give access to this server
 	 *
-	 * The expetcted object has the following properties:
+	 * The expected object has the following properties:
 	 *     - int key: the id of the SSH key to fetch from DevCentral
 	 *     - array allowedConnectionFrom: an array of the hosts masks to allow to connect, each item a string (mandatory)
 	 *     - string|null restrictCommand: if not null, restrict the connection to a single command, automatically executed
