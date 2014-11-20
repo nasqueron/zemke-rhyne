@@ -1,0 +1,49 @@
+      ___           ___           ___           ___           ___
+     /  /\         /  /\         /__/\         /__/|         /  /\
+    /  /::|       /  /:/_       |  |::\       |  |:|        /  /:/_
+   /  /:/:|      /  /:/ /\      |  |:|:\      |  |:|       /  /:/ /\
+  /  /:/|:|__   /  /:/ /:/_   __|__|:|\:\   __|  |:|      /  /:/ /:/_
+ /__/:/ |:| /\ /__/:/ /:/ /\ /__/::::| \:\ /__/\_|:|____ /__/:/ /:/ /\
+ \__\/  |:|/:/ \  \:\/:/ /:/ \  \:\~~\__\/ \  \:\/:::::/ \  \:\/:/ /:/
+     |  |:/:/   \  \::/ /:/   \  \:\        \  \::/~~~~   \  \::/ /:/
+     |  |::/     \  \:\/:/     \  \:\        \  \:\        \  \:\/:/
+     |  |:/       \  \::/       \  \:\        \  \:\        \  \::/
+     |__|/   ___   \__\/   ___   \__\/         \__\/ ___     \__\/ ___
+            /  /\         /__/\          ___        /__/\         /  /\    
+           /  /::\        \  \:\        /__/|       \  \:\       /  /:/_   
+          /  /:/\:\        \__\:\      |  |:|        \  \:\     /  /:/ /\  
+         /  /:/~/:/    ___ /  /::\     |  |:|    _____\__\:\   /  /:/ /:/_ 
+        /__/:/ /:/___ /__/\  /:/\:\  __|__|:|   /__/::::::::\ /__/:/ /:/ /\
+        \  \:\/:::::/ \  \:\/:/__\/ /__/::::\   \  \:\~~\~~\/ \  \:\/:/ /:/
+         \  \::/~~~~   \  \::/         ~\~~\:\   \  \:\  ~~~   \  \::/ /:/ 
+          \  \:\        \  \:\           \  \:\   \  \:\        \  \:\/:/  
+           \  \:\        \  \:\           \__\/    \  \:\        \  \::/   
+            \__\/         \__\/                     \__\/         \__\/    
+
+
+    This account is used by deployment scripts to build
+    Docker containers for exotic Nasqueron applications.
+
+    Available scripts:
+    ------------------
+    * getcredentials ... retrieves a credential stored on DevCentral
+    * getpublickeys .... fetches SSH public key allowed to use this account
+    * Makefile ......... runs getpublickeys to populate .ssh/authorized_keys
+
+    Data:
+    -----
+    * servers.json ..... the list of servers allowed to use this account
+
+    Authentication:
+    ---------------
+    For each server needing to use this account, create a SSH key, store in
+    on DevCentral, give access to it to the NasqDDS group, allow retrieval
+    through conduit and update the servers.json file.
+
+    Reinstallation:
+    ---------------
+    0. Ensure arc and jq are available on the server
+    1. Create a new unix account, 'zr'
+    2. Pull this repository directly in the home directory
+    3. Install an arc certificate in ~/.arcrc 
+    4. Run 'make'

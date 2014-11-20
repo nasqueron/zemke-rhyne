@@ -1,0 +1,9 @@
+[{
+	"key": "2",
+	"allowedConnectionFrom": [
+		"172.27.26.49",
+		"dwellers.nasqueron.drake"
+	],
+	"restrictCommand": null,
+	"comment": "Zemke-Rhyne"
+}]
