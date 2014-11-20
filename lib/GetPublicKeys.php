@@ -47,9 +47,13 @@ class GetPublicKeys {
 		$reply = $request
 		         ->query()
 		         ->getReply();
-		$key = current((Array)$reply->response->data) //first property of the data object
-		       ->material
-		       ->publicKey;
+
+		//Gets the first property of the response.data object,
+		//then the material.publicKey property
+		$data = (Array)$reply->response->data;
+		$firstDataItem = array_shift($data);
+
+		$key = $firstDataItem->material->publicKey;
 		return trim($key);
 	}
 
