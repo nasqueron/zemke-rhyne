@@ -97,7 +97,7 @@ class ArcConduitQuery {
 	///
 
 	/**
-	 *Gets arc command with the relevant parameters
+	 * Gets arc command with the relevant parameters
 	 *
 	 * @return string The arc call-conduit <method> command
 	 */
@@ -107,6 +107,7 @@ class ArcConduitQuery {
 
 	/**
 	 * Runs the arc command and stores the reply
+	 * 
 	 * @return $this
 	 * @throws Exception on command process spawning failure
 	 */
