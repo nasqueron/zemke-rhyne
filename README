@@ -21,6 +21,8 @@
             \__\/         \__\/                     \__\/         \__\/    
 
 
+    Support tools for a Docker <--> Phabricator bridge.
+
     This account is used by deployment scripts to build
     Docker containers for exotic Nasqueron applications.
 

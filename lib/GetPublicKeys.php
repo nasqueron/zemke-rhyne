@@ -1,11 +1,25 @@
 <?php
 
+/**
+ * Zemke-Rhyne
+ * Support tools for a Docker <--> Phabricator bridge
+ *
+ * (c) Sébastien Santoro aka Dereckson, 2014
+ * Released under BSD license.
+ */
+
 require 'ConduitPassphraseQueryRequest.php';
 
 /**
- * Get public keys allowed to connect to the account
+ * Class GetPublicKeys
+ *
+ * Allows to get public keys allowed to connect to the account
  */
 class GetPublicKeys {
+	///
+	/// Constant and helper methods to retrieves filename paths
+	///
+
 	/**
 	 * The directory where data is stored
 	 *
@@ -34,6 +48,10 @@ class GetPublicKeys {
 		       . '/' . $filename;
 	}
 
+	///
+	/// SSH authorized_keys helper methods
+	///
+
 	/**
 	 * Gets SSH public key from DevCentral
 	 *
@@ -41,6 +59,7 @@ class GetPublicKeys {
 	 * @return string The SSH public key
 	 */
 	public static function getPublicKey ($id) {
+		//Calls conduit with a passphrase.query request
 		$request = new ConduitPassphraseQueryRequest(
 			[$id], true, false
 		);
@@ -74,7 +93,7 @@ class GetPublicKeys {
 
 		//Options
 		if ($server->restrictCommand !== null) {
-			$line .= self::getAuthorizedKeyCommandOption($server->restrictCommand); 
+			$line .= self::getAuthorizedKeyCommandOption($server->restrictCommand);
 			$line .= ',';
 		}
 		$line .= self::getAuthorizedKeyFrom($server->allowedConnectionFrom);
@@ -132,6 +151,10 @@ class GetPublicKeys {
 			echo "\n";
 		}
 	}
+
+	///
+	/// Script procedural code
+	///
 
 	/**
 	 *  Runs the script
