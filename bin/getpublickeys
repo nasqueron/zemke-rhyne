@@ -1,6 +1,6 @@
 #!/usr/bin/env php
 <?php
 
-require getenv(HOME) . '/lib/GetPublicKeys.php';
+require getenv('HOME') . '/lib/GetPublicKeys.php';
 GetPublicKeys::run();
 
