@@ -107,7 +107,7 @@ class ArcConduitQuery {
 
 	/**
 	 * Runs the arc command and stores the reply
-	 * 
+	 *
 	 * @return $this
 	 * @throws Exception on command process spawning failure
 	 */
