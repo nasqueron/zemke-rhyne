@@ -1,0 +1,17 @@
+#!/usr/bin/env php
+<?php
+#
+# Gets configuration from Nasqueron operations repository
+#
+# Usage: getconfig <configuration file>
+#
+
+require getenv('HOME') . '/lib/GetConfiguration.php';
+
+if ($argc == 1) {
+	$file = "php://stdin";
+} else {
+	$file = 'https://raw.githubusercontent.com/nasqueron/operations/master/config/' . $argv[1] . '.tmpl';
+}
+
+GetConfiguration::Run($file);

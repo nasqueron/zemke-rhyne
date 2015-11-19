@@ -28,6 +28,7 @@
 
     Available scripts:
     ------------------
+    * getconfig ........ retrieves a configuration file in rOPS
     * getcredentials ... retrieves a credential stored on DevCentral
     * getpublickeys .... fetches SSH public key allowed to use this account
     * Makefile ......... runs getpublickeys to populate .ssh/authorized_keys
