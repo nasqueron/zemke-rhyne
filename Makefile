@@ -4,6 +4,9 @@
 
 all: .ssh/authorized_keys
 
+clean:
+	rm -f .ssh/authorized_keys
+
 .ssh/authorized_keys:
 	mkdir -p -m 0700 .ssh
 	php bin/getpublickeys > .ssh/authorized_keys
