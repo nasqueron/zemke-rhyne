@@ -35,7 +35,11 @@
 
     Data:
     -----
+    The datasources are stored in the data/ folder.
+
     * servers.json ..... the list of servers allowed to use this account
+
+    This file is currently provisionned by rOPS in the zemke-rhyne unit.
 
     Authentication:
     ---------------
