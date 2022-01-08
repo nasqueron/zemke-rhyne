@@ -91,6 +91,11 @@ class GetPublicKeys {
     public static function getAuthorizedKey ($server) {
         $line = "";
 
+        $key = self::getPublicKey($server->key);
+        if ($key == "") {
+            throw new Exception("Can't fetch public key $server->key");
+        }
+
         //Options
         if ($server->restrictCommand !== null) {
             $line .= self::getAuthorizedKeyCommandOption($server->restrictCommand);
@@ -102,7 +107,7 @@ class GetPublicKeys {
         $line .= ' ';
 
         //Key
-        $line .= self::getPublicKey($server->key);
+        $line .= $key;
         $line .= ' ';
         $line .= $server->comment;
 
