@@ -21,6 +21,9 @@
               \__\/         \__\/                     \__\/         \__\/
 
 
+    2023-03-07: THIS PROJECT IS NOW ARCHIVED. HashiCorp Vault seems a better
+    way to handle credentials than Phabricator passphrase application.
+
     Support tools for a Docker <--> Phabricator bridge.
 
     This account is used by deployment scripts to build
